@@ -22,19 +22,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#"><span style="font-weight: bolder">CCH</span></a>
+                <a class="navbar-brand topnav" href="index.html"><span style="font-weight: bolder">CCH</span></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About Us</a>
+                        <a href="#about">About Us</a>
                     </li>
                     <li>
-                        <a href="">Login</a>
+                        <a href="login.jsp">Login</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact Us</a>
+                        <a href="contact.html">Contact Us</a>
                     </li>
                 </ul>
             </div>

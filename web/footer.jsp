@@ -11,7 +11,7 @@
        <%@include file="header.jsp" %>
     </head>
     <body>
-         <!-- Footer -->
+      <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
@@ -19,7 +19,7 @@
                     
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="#up">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
