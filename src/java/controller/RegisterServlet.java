@@ -40,6 +40,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("student", s);
             StudentDAO cdao = new StudentDAO();
             cdao.createAccount(s);
+            
         }
     }
 

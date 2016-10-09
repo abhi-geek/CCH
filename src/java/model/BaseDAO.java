@@ -18,7 +18,7 @@ public class BaseDAO {
     public Connection getConnection() throws ClassNotFoundException, SQLException
     {
         Class.forName("org.apache.derby.jdbc.ClientDriver");
-        con = DriverManager.getConnection("jdbc:derby://localhost:1527/student","student","student ");
+        con = DriverManager.getConnection("jdbc:derby://localhost:1527/STUDENT","STUDENT","STUDENT");
         return con;
     }
     

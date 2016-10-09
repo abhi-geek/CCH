@@ -32,7 +32,7 @@ public class StudentDAO extends BaseDAO {
         } catch (SQLException ex) {
             Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "insert into student.student values(?,?,?,?)";
+        String sql = "insert into STUDENT.STUDENT values(?,?,?,?)";
         try {
             preparedStatement= connection.prepareStatement(sql);
             preparedStatement.setString(1,s.getSname());;
@@ -53,5 +53,34 @@ public class StudentDAO extends BaseDAO {
                     Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
         
-    }  
+    }
+    
+     public  boolean checkLogin(Student c)
+    {
+        try {
+            connection=getConnection();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           String sql = "select * from STUDENT.STUDENT where SROLLNO=? AND SEMAILID= ?";
+        try {
+                preparedStatement = connection.prepareStatement(sql);
+                
+                preparedStatement.setInt(1,c.getSrollno());
+                
+                preparedStatement.setString(2,c.getSemailid());
+            
+                rs=preparedStatement.executeQuery();
+                while( rs.next())
+              {
+              return true;
+              }
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+         return false;
+    }
 }

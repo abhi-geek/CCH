@@ -7,10 +7,13 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Student;
+import model.StudentDAO;
 
 /**
  *
@@ -31,6 +34,26 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            Student c = new Student();
+            
+             StudentDAO cdao = new StudentDAO();
+             boolean b;
+            c.setSrollno(Integer.parseInt(request.getParameter("username")));
+            c.setSemailid(request.getParameter("password"));
+             
+            b = cdao.checkLogin(c);
+            if(b)
+            {
+                request.setAttribute("student",c);
+                RequestDispatcher rd;
+                rd = request.getRequestDispatcher("StudentDashboard.jsp");
+                rd.forward(request, response);
+            }                
+            else
+            {
+               response.sendRedirect("login.jsp");
+            }      
             
             
         }

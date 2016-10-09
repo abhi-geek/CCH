@@ -35,12 +35,12 @@
                       </div>
                     <form role="form" action="LoginServlet.do" method="post" class="login-form">
 			<div class="form-group">
-				<label for="form-username">Username</label>
-				<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				<label for="username">Username</label>
+				<input type="text" name="username" placeholder="Username..." class="username form-control" id="username">
 			 </div>
 			<div class="form-group">
-				<label for="form-password">Password</label>
-				<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+				<label for="password">Password</label>
+				<input type="password" name="password" placeholder="Password..." class="password form-control" id="password">
 			 </div>
                         <div class="form-group" style="margin-bottom: 2%">
 			<input type="submit" name="submit" value="Login" class="btn btn-lg btn-primary"> &nbsp; <input type="reset" name="reset" value="Reset" class="btn btn-lg btn-default">       
