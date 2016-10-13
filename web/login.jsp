@@ -33,14 +33,14 @@
                     <div class="page-header">
                         <h2>Login</h2>
                       </div>
-                    <form role="form" action="LoginServlet.do" method="post" class="login-form">
+                    <form role="form" action="LoginServlet.do" method="post">
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input type="text" name="username" placeholder="Username..." class="username form-control" id="username">
+				<input type="text" name="username" placeholder="Username" class="username form-control" id="username">
 			 </div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="password" name="password" placeholder="Password..." class="password form-control" id="password">
+				<input type="password" name="password" placeholder="Password" class="password form-control" id="password">
 			 </div>
                         <div class="form-group" style="margin-bottom: 2%">
 			<input type="submit" name="submit" value="Login" class="btn btn-lg btn-primary"> &nbsp; <input type="reset" name="reset" value="Reset" class="btn btn-lg btn-default">       
@@ -51,8 +51,8 @@
                 </div>
             </div>
         </div>
-        </div>    
-         
+        </div>
+               
          <%@include file="footer.jsp" %>
     </body>
 </html>

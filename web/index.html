@@ -183,7 +183,10 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connecting Students :)</h2>
+                    <h2>Connecting Students :)</h2><h4>
+                    <p>Bunch of CRCE enthusiasts trying to ease up Life in Engineering at FR.CRCE.
+                    <br>Bringing all the councils under one hood to simplify process of interviews and to increase students interaction.
+                    </p></h4>
                 </div>
                 <div class="col-lg-6">
                     
@@ -250,6 +253,23 @@
               });
             });
     </script>
+    <!--for smooth scrolling-->
+    <script>
+        $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+        </script>
 
 </body>
 

@@ -39,8 +39,8 @@ public class LoginServlet extends HttpServlet {
             
              StudentDAO cdao = new StudentDAO();
              boolean b;
-            c.setSrollno(Integer.parseInt(request.getParameter("username")));
-            c.setSemailid(request.getParameter("password"));
+            c.setSname(request.getParameter("username"));
+            c.setSrollno(Integer.parseInt(request.getParameter("password")));
              
             b = cdao.checkLogin(c);
             if(b)

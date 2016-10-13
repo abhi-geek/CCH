@@ -25,12 +25,12 @@
                 <div class="container">
                         <div class="row">
 				<div class="col-xs-12 col-md-6 col-md-offset-1 text-center" style="margin:20px">
-				
+                                    <div class="col-md-offset-3">
 					<ul class="nav nav-pills">
-					  <li class="active"><a data-toggle="tab" href="#home">Students </a></li>
-					  <li><a data-toggle="tab" href="#menu1">Council </a></li>
+					  <li class="active"><a data-toggle="tab" href="#home">Student Registration</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Council Registration</a></li>
 					</ul>
-
+                                    </div>
 					<div class="tab-content">
 					  <div id="home" class="tab-pane fade in active">
 							<div class="col-md-offset-1 col-md-11">

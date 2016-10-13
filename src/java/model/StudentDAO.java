@@ -17,21 +17,16 @@ import java.util.logging.Logger;
  *
  * @author universe
  */
-public class StudentDAO extends BaseDAO {
+public class StudentDAO extends postgreConn {
     Connection connection;
     PreparedStatement preparedStatement;
     Statement statement;
     ResultSet rs;
    
-    public void createAccount(Student s) 
+    public void createAccount(Student s) throws SQLException 
     {
-        try {
-            connection = getConnection();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        connection = getConnection();
+        connection.createStatement();
         String sql = "insert into STUDENT.STUDENT values(?,?,?,?)";
         try {
             preparedStatement= connection.prepareStatement(sql);
@@ -40,15 +35,17 @@ public class StudentDAO extends BaseDAO {
             preparedStatement.setString(3,s.getSdepartment());
             preparedStatement.setString(4,s.getSemailid());
            
+       
+                //int count = preparedStatement.executeUpdate();
+                preparedStatement.executeUpdate();
+                connection.close();
         
-                int count = preparedStatement.executeUpdate();
-                
-                if(count>0)
+               /* if(count>0)
                 {
                     System.out.println("Successfully Inserted");
                 }else{
                     System.out.println("insertion failed");
-                }
+                }*/
                 } catch (SQLException ex) {
                     Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -57,25 +54,19 @@ public class StudentDAO extends BaseDAO {
     
      public  boolean checkLogin(Student c)
     {
-        try {
-            connection=getConnection();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-           String sql = "select * from STUDENT.STUDENT where SROLLNO=? AND SEMAILID= ?";
+        connection=getConnection();
+           String sql = "select * from STUDENT.STUDENT where SNAME=? AND SROLLNO= ?";
         try {
                 preparedStatement = connection.prepareStatement(sql);
                 
-                preparedStatement.setInt(1,c.getSrollno());
+                preparedStatement.setString(1,c.getSname());
                 
-                preparedStatement.setString(2,c.getSemailid());
+                preparedStatement.setInt(2,c.getSrollno());
             
                 rs=preparedStatement.executeQuery();
                 while( rs.next())
               {
-              return true;
+                    return true;
               }
         } catch (SQLException ex) {
             Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
