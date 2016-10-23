@@ -29,7 +29,7 @@
                     
                         
                           <div class="thumbnail">
-                              <img src="img/user.png" alt="User" class="img-responsive" >
+                              <img src="img/profile.JPG" alt="User" class="img-responsive" style="margin-top: 6px">
                             <div class="caption">
                               <h3>User</h3>
                               <p> Abhishek<br>7387<br>Computers
@@ -76,7 +76,7 @@
                                     <img class="media-object img-thumbnail" ng-src={{x.img}} alt="TEDxCRCE" style="margin-top:20px">
                                 </div>
                                 <div class="col-md-19">
-                                    <h3 >{{x.Name}}</h3>
+                                    <h3 ><a href="CouncilDashboard.jsp">{{x.Name}}</a></h3>
                                     <p>{{x.Description}}              <i> <a href="CouncilDashboard.jsp">know more>></a></i></p>
                                 </div>
                             </div>
@@ -100,12 +100,12 @@
             app.controller('myCtrl', function() {
                 list = [
                    {
-                        img  : 'img/tedx.png',
+                        img  : 'img/tedx.jpeg',
                         Name : 'TEDxCRCE',
                         Description : 'TEDxCRCE is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.',
                         Tag :'non-technical'
                     },{
-                        img  : 'img/csi.png',
+                        img  : 'img/csi.jpg',
                         Name : 'CSI',
                         Description : 'he Computer Society of India is a non-profit professional meet to exchange views and information learn and share ideas.It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals. It has 72 chapters across India, 511 student branches, and more than 100,000 members. The wide spectrum of members is committed to the advancement of theory and practice of Computer Engineering and Technology Systems, Science and Engineering, Information Processing and related Arts and Sciences.',
                         Tag :'technical'
