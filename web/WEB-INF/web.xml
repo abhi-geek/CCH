@@ -22,7 +22,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>StudentDAO</servlet-name>
-        <url-pattern>/StudentDAO</url-pattern>
+        <url-pattern>/StudentDAO.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

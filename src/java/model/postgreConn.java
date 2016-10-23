@@ -19,7 +19,7 @@ public class postgreConn {
     {
         if (connection != null)
             return null;
-        String url = "Jdbc:postgresql://localhost:5432/";
+        String url = "Jdbc:postgresql://localhost:5433/postgres";
         try
         {
            Class.forName("org.postgresql.Driver");

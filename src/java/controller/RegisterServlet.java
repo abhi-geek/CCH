@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import java.lang.*;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,16 +31,17 @@ public class RegisterServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NullPointerException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
           
             Student s;
             s = Student.populateData(request, response);
-            
-            request.setAttribute("student", s);
+          
             StudentDAO cdao = new StudentDAO();
             cdao.createAccount(s);
+            
+            
             
         }
     }

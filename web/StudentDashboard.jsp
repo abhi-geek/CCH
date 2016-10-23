@@ -7,10 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="model.Student" %>
-<html>
+<html ng-app="myApp">
     <head>
         <%@include file="header.jsp" %>
         <link href="css/searchbar.css" type="text/css">
+           <script src="js/angular.min.js"></script>
     </head>
     <body data-spy="scroll" data-target="#myscrollspy">
          <%@include file="navbar.jsp" %>
@@ -18,7 +19,7 @@
                 <br><br><br>
               <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
-                <li class="active">Register</li>
+                <li class="active">Students' Home</li>
               </ol>
         </div>
         
@@ -52,145 +53,36 @@
             
             <div class="col-md-10" >
              <div id="1">
-                <!--Custom Serachbar-->
+                <!--Custom Search bar-->
                 <div class="row">
                     <div class="col-md-11 col-md-offset-1">
                         <div id="custom-search-input">
                             <div class="col-md-10">
-                                <input type="text" class="form-control" placeholder="Search Council . . . " />
+                                <input id="search" ng-model="searchString" type="text" class="form-control" placeholder="Search Council Name, tech/non-tech . . . " />
                             </div>
-                            <div class="col-md-2">
-                                <a href="#" class="btn btn-md btn-default">Search <span class="glyphicon glyphicon-search"></span></a>
-                            </div>  
+                            
                         </div>
                     </div>
                     </div>
-                <div class="col-md-offset-1">
-                <div class="row" >
-                    
-                    <a role="button" data-toggle="collapse" aria-pressed="false" autocomplete="off" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1" >
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
+                <br>
+                <br>
+                
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="row">
+                        <div ng-controller="myCtrl as controller">
+                        <div class="panel panel-default" ng-repeat="x in controller.list | searchFor:searchString">
+                            <div class="panel-body">
+                                <div class="col-md-3">
+                                    <img class="media-object img-thumbnail" ng-src={{x.img}} alt="TEDxCRCE" style="margin-top:20px">
+                                </div>
+                                <div class="col-md-19">
+                                    <h3 >{{x.Name}}</h3>
+                                    <p>{{x.Description}}              <i> <a href="CouncilDashboard.jsp">know more>></a></i></p>
                                 </div>
                             </div>
-                    </a>
-                    <a role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </a>
-                    <a role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </a>
-                    <div class="col-md-10">
-                        <div class="collapse" id="collapseExample1">
-                            <div class="well">
-                                <h3>CSI</h3>
-                             <p>CSI is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p>
-                             <p><a href="#" class="link">view council page>></a></p>
-                            </div>
                         </div>
-                        <div class="collapse" id="collapseExample2">
-                            <div class="well">
-                                <h3>TEDxCRCE</h3>
-                             <p>TEDxCRCE is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p><p><a href="#" class="link">view council page>></a></p>
-                            </div>
                         </div>
-                        <div class="collapse" id="collapseExample3">
-                            <div class="well">
-                                <h3>ITSA</h3>
-                             <p>ITSA is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p><p><a href="#" class="link">view council page>></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="row" >
-                    
-                    <a role="button" data-toggle="collapse" href="#collapseExample11" aria-expanded="false" aria-controls="collapseExample11">
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </a>
-                    <a role="button" data-toggle="collapse" href="#collapseExample22" aria-expanded="false" aria-controls="collapseExample22">
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </a>
-                    <a role="button" data-toggle="collapse" href="#collapseExample33" aria-expanded="false" aria-controls="collapseExample33">
-                            <div class="col-md-3 space">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                    <h3>CSI</h3>
-                                    <div class="thumbnail">
-                                        <img src="img/user.png" alt="User" class="img-responsive" >
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </a>
-                    <div class="col-md-10">
-                        <div class="collapse" id="collapseExample11">
-                            <div class="well">
-                                <h3>CSI</h3>
-                             <p>CSI is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p><p><a href="#" class="link">view council page>></a></p>
-                            </div>
-                        </div>
-                        <div class="collapse" id="collapseExample22">
-                            <div class="well">
-                                <h3>CSI</h3>
-                             <p>TEDxCRCE is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p><p><a href="#" class="link">view council page>></a></p>
-                            </div>
-                        </div>
-                        <div class="collapse" id="collapseExample33">
-                            <div class="well">
-                                <h3>CSI</h3>
-                             <p>ITSA is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. Cumulating the spirit of TED’s mission, “Ideas Worth Spreading” and our college motto “Moulding Engineers who can Build a nation”, TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.
-                             </p><p><a href="#" class="link">view council page>></a></p>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
+                    </div>    
                 </div>
             </div>
             </div>
@@ -202,6 +94,56 @@
         </div>
         
         <%@include file="footer.jsp" %>
+     
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function() {
+                list = [
+                   {
+                        img  : 'img/tedx.png',
+                        Name : 'TEDxCRCE',
+                        Description : 'TEDxCRCE is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.',
+                        Tag :'non-technical'
+                    },{
+                        img  : 'img/csi.png',
+                        Name : 'CSI',
+                        Description : 'he Computer Society of India is a non-profit professional meet to exchange views and information learn and share ideas.It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals. It has 72 chapters across India, 511 student branches, and more than 100,000 members. The wide spectrum of members is committed to the advancement of theory and practice of Computer Engineering and Technology Systems, Science and Engineering, Information Processing and related Arts and Sciences.',
+                        Tag :'technical'
+                    },{
+                       img  : 'img/stuco.png',
+                        Name : 'Students Council',
+                        Description : 'TEDxCRCE is the first independently held TED Event of Fr.Conceicao Rodrigues College of Engineering, Mumbai. TEDxCRCE strives to recreate the unique experience found at TED, where the world’s leading thinkers and doers congregate to share what they are most passionate about. We aim to provide a platform where the smartest thinkers, greatest visionaries, and most fascinating teachers will be inspired and will have the opportunity to inspire others.',
+                        Tag :'non-technical'
+                    },{
+                        img  : 'img/abadha.png',
+                        Name : 'Abadha',
+                        Description : 'Baja SAE is an intercollegiate design competition run by the Society of Automotive Engineers (SAE).The goal in Baja SAE racing is to design, build and race off-road vehicles that can withstand the harshest elements of rough terrain. The vehicles used in Baja SAE racing are often similar in appearance to dune buggies',
+                        Tag :'technical'
+                    }
+                ];
+                this.list=list;
+                
+        });
         
+        app.filter('searchFor', function(){
+            return function(arr, searchString){
+                    if(!searchString){
+                            return arr;
+                    }
+                    var result = [];
+                    searchString = searchString;
+                    angular.forEach(arr, function(list){
+                            if(list.Name.toLowerCase().indexOf(searchString) !== -1){
+                            result.push(list);
+                    } 
+                    else if(list.Tag.toLowerCase().indexOf(searchString) !== -1){
+                            result.push(list);
+                    }
+                    });
+                    return result;
+            };
+        });
+            
+            </script>
     </body>
 </html>

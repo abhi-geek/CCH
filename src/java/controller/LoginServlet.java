@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import java.lang.*;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Student;
 import model.StudentDAO;
+import model.Login;
 
 /**
  *
@@ -31,11 +33,11 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NullPointerException{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            Student c = new Student();
+             Student c = new Student();
             
              StudentDAO cdao = new StudentDAO();
              boolean b;
@@ -53,8 +55,8 @@ public class LoginServlet extends HttpServlet {
             else
             {
                response.sendRedirect("login.jsp");
-            }      
-            
+            }         
+                
             
         }
     }
