@@ -18,6 +18,8 @@ public class Student {
     private String Sname;
     private String Sdepartment;
     private String Semailid;
+    private String Spassword;
+    private long Scontact;
 
     public int getSrollno() {
         return Srollno;
@@ -34,6 +36,24 @@ public class Student {
     public String getSemailid() {
         return Semailid;
     }
+
+    public String getSpassword() {
+        return Spassword;
+    }
+
+    public long getScontact() {
+        return Scontact;
+    }
+
+    public void setSpassword(String Spassword) {
+        this.Spassword = Spassword;
+    }
+
+    public void setScontact(long Scontact) {
+        this.Scontact = Scontact;
+    }
+    
+    
 
     public void setSrollno(int Srollno) {
         this.Srollno = Srollno;

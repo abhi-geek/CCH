@@ -22,7 +22,9 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 15px;
+    color: white;
+    
 }
 
 .lead {
@@ -59,6 +61,9 @@ h6 {
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+.l{
+    margin-top: 12px;
 }
 
 @media(max-width:767px) {
@@ -283,3 +288,7 @@ hr{
     }
 }
 
+
+ .affix {
+      top: 20px;
+  }

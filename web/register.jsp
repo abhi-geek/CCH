@@ -43,10 +43,10 @@
 										<form role="form" action="RegisterServlet.do" method="post" >
 											<div class="form-group">
                                                                                             <div class="col-md-3">
-                                                                                                <lable for="Sname">Name:</lable>
+                                                                                                <lable for="Sname" >Name:</lable>
                                                                                             </div>
                                                                                             <div class="col-md-9">
-                                                                                            <input type="text" name="Sname" placeholder="Name" class="Sname form-control" id="Sname">
+                                                                                            <input type="text" name="Sname" placeholder="Enter Name" class="Sname form-control" id="Sname">
                                                                                             </div>
                                                                                         </div>
                                                                                          <div class="form-group">
@@ -54,7 +54,16 @@
                                                                                                 <lable for="Srollno">Roll no:</lable>
                                                                                             </div>
                                                                                             <div class="col-md-9">
-                                                                                            <input type="number" name="Srollno" placeholder="Roll no" class="Srollno form-control" id="Srollno">
+                                                                                            <input type="number" name="Srollno" placeholder="Enter Roll no" class="Srollno form-control" id="Srollno">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    
+                                                                                        <div class="form-group">
+                                                                                            <div class="col-md-3">
+                                                                                                <lable for="Spassword">Password: </lable>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                            <input type="password" name="Spassword" placeholder="Enter Password" class="Spassword form-control" id="Spassword">
                                                                                             </div>
                                                                                         </div>
                                                                                          <div class="form-group">
@@ -62,15 +71,24 @@
                                                                                                 <lable for="Sdepartment">Department: </lable>
                                                                                             </div>
                                                                                             <div class="col-md-9">
-                                                                                            <input type="text" name="Sdepartment" placeholder="Department" class="Sdepartment form-control" id="Sdepartment">
+                                                                                            <input type="text" name="Sdepartment" placeholder="Enter Department" class="Sdepartment form-control" id="Sdepartment">
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div class="form-group">
+                                                                                            <div class="col-md-3">
+                                                                                                <lable for="Scontact">Phone: </lable>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                            <input type="tel" name="Scontact" placeholder="Enter Phone Number" class="Scontact form-control" id="Scontact">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                         
                                                                                          <div class="form-group">
                                                                                             <div class="col-md-3">
                                                                                                 <lable for="Semailid">Email id: </lable>
                                                                                             </div>
                                                                                             <div class="col-md-9">
-                                                                                            <input type="text" name="Semailid" placeholder="Email id" class="Semailid form-control" id="Semailid">
+                                                                                            <input type="text" name="Semailid" placeholder="Enter Email id" class="Semailid form-control" id="Semailid">
                                                                                             </div>
                                                                                         </div>
 											
